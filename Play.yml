@@ -1,0 +1,13 @@
+---
+- name: installing jenkins,docker,java on master
+  become: true
+  hosts: localhost
+  tasks:
+  - name: run master script
+    script: master.sh
+- name: installing docker & java on slaves
+  become: true
+  hosts: all
+  tasks:
+  - name: run slaves script
+    script: slaves.sh
